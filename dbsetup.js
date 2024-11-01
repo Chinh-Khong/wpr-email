@@ -32,7 +32,6 @@ const mysql = require('mysql2/promise');
         );
     `);
 
-    // Chèn dữ liệu mẫu
     await connection.query(`INSERT INTO users (email, password, full_name) VALUES
         ('a@a.com', '123', 'User A'),
         ('b@b.com', '123', 'User B'),

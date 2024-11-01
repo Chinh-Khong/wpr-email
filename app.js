@@ -9,6 +9,8 @@ const emailRoutes = require('./routers/emailRouters');
 
 const app = express();
 
+app.use(express.static('public'));
+
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -19,7 +21,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/', authRoutes);
 app.use('/', emailRoutes);
 app.get('/', (req, res) => {
-    res.render('signin');
+    res.render('login');
 });
 const PORT = 8000;
 app.listen(PORT, () => {
